@@ -7,7 +7,8 @@ const phrases = ['This is my first phrase of the array',
             'This is my second phrase of the array',
             'This is my third Phrase of the array',
             'This is my forth Phrase of the array',
-            'This is my first Phrase of the array'];
+            'This is my first Phrase of the array'
+        ];
 
 btn__reset.addEventListener('click', () => {
     const overlay = document.getElementById('overlay');
@@ -20,4 +21,4 @@ let randomNumber = Math.floor(Math.random() * phrases.length);
 return arr[randomNumber];
 };
 
-getRandomPhraseAsArray('phrases');
+getRandomPhraseAsArray(phrases);
