@@ -30,7 +30,7 @@ function checkLetter(btn) {
     for(let i = 0; i < lis.length; i++) {
     //    let lis[i] = li;
         if(btn === li[i].textContent) {
-            li.classList.add('show');
+            li[i].classList.add('show');
             match = btn.textContent;
         }
     }
