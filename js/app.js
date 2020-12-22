@@ -33,7 +33,7 @@ function checkLetter(btn) {
 
         if(btn === li[i].textContent) {
             li.classList.add = 'show';
-            // li.textContent = match;
+            btn.textContent = match;
         }
     }
     return match;
