@@ -29,11 +29,9 @@ function checkLetter(btn) {
 
     for(let i = 0; i < lis.length; i++) {
     //    let lis[i] = li;
-        // li.textContent = arr[randomNumber];
-
         if(btn === li[i].textContent) {
-            li.classList.add = 'show';
-            btn.textContent = match;
+            li.classList.add('show');
+            match = btn.textContent;
         }
     }
     return match;
