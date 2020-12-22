@@ -16,7 +16,8 @@ btn__reset.addEventListener('click', () => {
 
 function getRandomPhraseAsArray(arr) {
 let randomNumber = Math.floor(Math.random() * phrases.length);
-arr[randomNumber].indexOf =  arrayIndex;
+// arr[randomNumber].indexOf =  arrayIndex;
+return arr[randomNumber];
 };
 
-getRandomPhraseAsArray(console.log(phrases));
+getRandomPhraseAsArray('phrases');
