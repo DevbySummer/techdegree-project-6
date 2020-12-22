@@ -15,10 +15,27 @@ btn__reset.addEventListener('click', () => {
     overlay.style.display = 'none';
 });
 
-function getRandomPhraseAsArray(arr) {
+function getRandomPhraseAsArray(arr) { // returns random array
 let randomNumber = Math.floor(Math.random() * phrases.length);
 // arr[randomNumber].indexOf =  arrayIndex;
 return arr[randomNumber];
 };
-
 getRandomPhraseAsArray(phrases);
+
+
+function checkLetter(btn) { 
+    const lis = document.getElementsByTagName('li');
+    let match = null;
+
+    for(let i = 0; i < lis.length; i++) {
+       let lis[i] = li;
+        // li.textContent = arr[randomNumber];
+
+        if(btn === li) {
+            li.addClassName = 'show';
+            li.textContent = match;
+        }
+    }
+    return match;
+};
+checkLetter();
