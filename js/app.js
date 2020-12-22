@@ -28,12 +28,12 @@ function checkLetter(btn) {
     let match = null;
 
     for(let i = 0; i < lis.length; i++) {
-       let lis[i] = li;
+    //    let lis[i] = li;
         // li.textContent = arr[randomNumber];
 
-        if(btn === li) {
-            li.addClassName = 'show';
-            li.textContent = match;
+        if(btn === li[i].textContent) {
+            li.classList.add = 'show';
+            // li.textContent = match;
         }
     }
     return match;
