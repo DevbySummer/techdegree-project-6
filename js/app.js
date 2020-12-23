@@ -28,7 +28,6 @@ function checkLetter(btn) {
     let match = null;
 
     for(let i = 0; i < lis.length; i++) {
-    //    let lis[i] = li;
         if(btn === li[i].textContent) {
             li[i].classList.add('show');
             match = btn.textContent;
@@ -37,3 +36,7 @@ function checkLetter(btn) {
     return match;
 };
 checkLetter();
+
+qwerty.addEventListener('click' , () => {
+    
+});
