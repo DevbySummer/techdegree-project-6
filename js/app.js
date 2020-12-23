@@ -40,8 +40,9 @@ qwerty.addEventListener('click' , (e) => {
     if (e.target.tagName == 'BUTTON')
     {
         e.target.classList.add('chosen')
-        document.querySelectorAll('.chosen').disabled = true;
-        let results = checkLetter();
+        // document.querySelectorAll('.chosen').disabled = true;
+        e.target.disabled = true;
+        let results = checkLetter(e.target);
         if(results === false)
         {
             for(let i = 0; i <lis.length; i++) {
