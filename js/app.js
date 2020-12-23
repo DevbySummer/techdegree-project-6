@@ -37,10 +37,8 @@ function checkLetter(btn) {
 };
 
 qwerty.addEventListener('click' , (e) => {
-    if (e.target.tagName !== 'BUTTON' || GamepadButton.className == 'chosen')
+    if (e.target.tagName == 'BUTTON' || Button.className !== 'chosen')
     {
-
-    } else {
         button.classList.add('chosen')
         let results = checkLetter();
         if(results === false)
@@ -50,5 +48,22 @@ qwerty.addEventListener('click' , (e) => {
                 missed =+ 1;
             }
         }
-    }
+    } 
 });
+
+// qwerty.addEventListener('click' , (e) => {
+//     if (e.target.tagName !== 'BUTTON' || GamepadButton.className == 'chosen')
+//     {
+
+//     } else {
+//         button.classList.add('chosen')
+//         let results = checkLetter();
+//         if(results === false)
+//         {
+//             for(let i = 0; i <lis.length; i++) {
+//                 lis[i].pop;
+//                 missed =+ 1;
+//             }
+//         }
+//     }
+// });
