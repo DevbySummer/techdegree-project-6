@@ -35,8 +35,20 @@ function checkLetter(btn) {
     }
     return match;
 };
-checkLetter();
 
-qwerty.addEventListener('click' , () => {
-    
+qwerty.addEventListener('click' , (e) => {
+    if (e.target.tagName !== 'BUTTON' || GamepadButton.className == 'chosen')
+    {
+
+    } else {
+        button.classList.add('chosen')
+        let results = checkLetter();
+        if(results === false)
+        {
+            for(let i = 0; i <lis.length; i++) {
+                lis[i].pop;
+                missed =+ 1;
+            }
+        }
+    }
 });
