@@ -37,9 +37,10 @@ function checkLetter(btn) {
 };
 
 qwerty.addEventListener('click' , (e) => {
-    if (e.target.tagName == 'BUTTON' || Button.className !== 'chosen')
+    if (e.target.tagName == 'BUTTON')
     {
-        button.classList.add('chosen')
+        e.target.classList.add('chosen')
+        document.querySelectorAll('.chosen').disabled = true;
         let results = checkLetter();
         if(results === false)
         {
@@ -50,9 +51,9 @@ qwerty.addEventListener('click' , (e) => {
         }
     } 
 });
-
+// style.display ='disabled';
 // qwerty.addEventListener('click' , (e) => {
-//     if (e.target.tagName !== 'BUTTON' || GamepadButton.className == 'chosen')
+//     if (e.target.tagName !== 'BUTTON' || Button.className == 'chosen')
 //     {
 
 //     } else {
