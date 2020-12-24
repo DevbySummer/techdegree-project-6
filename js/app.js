@@ -20,7 +20,20 @@ let randomNumber = Math.floor(Math.random() * phrases.length);
 // arr[randomNumber].indexOf =  arrayIndex;
 return arr[randomNumber];
 };
-getRandomPhraseAsArray(phrases);
+// getRandomPhraseAsArray(phrases);
+
+function addPhraseToDisplay(arr) {
+    for(let i = 0; i < arr[randomNumber].length; i++) { // loop through randomly selecter array from 'phrases' array
+        let li = document.createElement('li'); // create 'li'
+        arr[randomNumber][i] = li.textContent; // add content to 'li[i]'
+        ul.appendChild(li); // attach 'li' with content to 'ul'
+        if( something == true ){ // test for character or white space
+            li.classList.add('letter'); // add class to character
+        }
+    }
+    const phraseArray = getRandomPhraseAsArray(phrases);
+};
+addPhraseToDisplay(phraseArray);
 
 
 function checkLetter(btn) { 
