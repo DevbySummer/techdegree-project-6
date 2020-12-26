@@ -17,10 +17,8 @@ btn__reset.addEventListener('click', () => {
 
 function getRandomPhraseAsArray(arr) { // returns random array
 let randomNumber = Math.floor(Math.random() * phrases.length);
-// arr[randomNumber].indexOf =  arrayIndex;
 return arr[randomNumber];
 };
-// getRandomPhraseAsArray(phrases);
 
 function addPhraseToDisplay(arr) {
     for(let i = 0; i < arr[randomNumber].length; i++) { // loop through randomly selecter array from 'phrases' array
@@ -31,17 +29,16 @@ function addPhraseToDisplay(arr) {
             li.classList.add('letter'); // add class to character
         }
     }
-    const phraseArray = getRandomPhraseAsArray(phrases);
 };
+const phraseArray = getRandomPhraseAsArray(phrases);
 addPhraseToDisplay(phraseArray);
 
-
 function checkLetter(btn) { 
-    const lis = document.getElementsByTagName('li');
+    const lis = querySelectorAll('.letter');
     let match = null;
 
     for(let i = 0; i < lis.length; i++) {
-        if(btn === li[i].textContent) {
+        if(btn === lis[i].textContent) {
             li[i].classList.add('show');
             match = btn.textContent;
         }
