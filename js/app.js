@@ -21,11 +21,12 @@ return arr[randomNumber];
 };
 
 function addPhraseToDisplay(arr) {
-    for(let i = 0; i < arr[randomNumber].length; i++) { // loop through randomly selecter array from 'phrases' array
+    for(let i = 0; i < arr.length; i++) { // loop through randomly selected array from 'phrases' array
         let li = document.createElement('li'); // create 'li'
-        arr[randomNumber][i] = li.textContent; // add content to 'li[i]'
+        li.textContent = arr[i]; // add content to 'li[i]'
+        let ul = phrase.querySelector('ul'); // declare ul
         ul.appendChild(li); // attach 'li' with content to 'ul'
-        if( something == true ){ // test for character or white space
+        if( arr[i] != ' ' ){ // test for character or white space
             li.classList.add('letter'); // add class letter to character
         }
         else {
@@ -37,7 +38,7 @@ const phraseArray = getRandomPhraseAsArray(phrases);
 addPhraseToDisplay(phraseArray);
 
 function checkLetter(btn) { 
-    const lis = querySelectorAll('.letter');
+    let lis = phrase.getElementsByTagName('li'); // lis is equal to all li's
     let match = null;
 
     for(let i = 0; i < lis.length; i++) {
@@ -65,20 +66,3 @@ qwerty.addEventListener('click' , (e) => {
         }
     } 
 });
-// style.display ='disabled';
-// qwerty.addEventListener('click' , (e) => {
-//     if (e.target.tagName !== 'BUTTON' || Button.className == 'chosen')
-//     {
-
-//     } else {
-//         button.classList.add('chosen')
-//         let results = checkLetter();
-//         if(results === false)
-//         {
-//             for(let i = 0; i <lis.length; i++) {
-//                 lis[i].pop;
-//                 missed =+ 1;
-//             }
-//         }
-//     }
-// });
