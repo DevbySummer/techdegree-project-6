@@ -26,7 +26,10 @@ function addPhraseToDisplay(arr) {
         arr[randomNumber][i] = li.textContent; // add content to 'li[i]'
         ul.appendChild(li); // attach 'li' with content to 'ul'
         if( something == true ){ // test for character or white space
-            li.classList.add('letter'); // add class to character
+            li.classList.add('letter'); // add class letter to character
+        }
+        else {
+            li.classList.add('space'); // add class space to character
         }
     }
 };
