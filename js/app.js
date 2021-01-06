@@ -35,7 +35,8 @@ function addPhraseToDisplay(arr) {
     }
 };
 const phraseArray = getRandomPhraseAsArray(phrases);
-addPhraseToDisplay(phraseArray);
+// addPhraseToDisplay(phraseArray);
+addPhraseToDisplay(phraseArray.toLowerCase());
 
 function checkLetter(btn) { 
     let lis = phrase.getElementsByTagName('li'); // lis is equal to all li's
@@ -43,26 +44,38 @@ function checkLetter(btn) {
 
     for(let i = 0; i < lis.length; i++) {
         if(btn === lis[i].textContent) {
-            li[i].classList.add('show');
+            lis[i].classList.add('show');
             match = btn.textContent;
         }
     }
     return match;
 };
 
-qwerty.addEventListener('click' , (e) => {
-    if (e.target.tagName == 'BUTTON')
-    {
-        e.target.classList.add('chosen')
-        // document.querySelectorAll('.chosen').disabled = true;
-        e.target.disabled = true;
-        let results = checkLetter(e.target);
-        if(results === false)
-        {
-            for(let i = 0; i <lis.length; i++) {
-                lis[i].pop;
-                missed =+ 1;
-            }
-        }
-    } 
+// qwerty.addEventListener('click' , (e) => {
+//     if (e.target.tagName == 'BUTTON')
+//     {
+//         e.target.classList.add('chosen')
+//         // document.querySelectorAll('.chosen').disabled = true;
+//         e.target.disabled = true;
+//         let results = checkLetter(e.target);
+//         if(results === false)
+//         {
+//             for(let i = 0; i <lis.length; i++) {
+//                 lis[i].pop;
+//                 missed =+ 1;
+//             }
+//         }
+//     } 
+// });
+
+qwerty.addEventListener('click', (event) => {
+    let keyrow = qwerty.querySelectorAll('.keyrow');
+    let button = qwerty.getElementsByTagName('button');
+    // const keyrow = button.parentNode;
+    if ( event.target.tagname === 'BUTTON' && button.classList != 'chosen' ) {
+        button.event.target.classList.add('chosen');
+        const letterFound = checkLetter(button);
+        document.getElementById('button').disabled = true;
+    }
+
 });
