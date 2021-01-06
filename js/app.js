@@ -51,22 +51,6 @@ function checkLetter(btn) {
     return match;
 };
 
-// qwerty.addEventListener('click' , (e) => {
-//     if (e.target.tagName == 'BUTTON')
-//     {
-//         e.target.classList.add('chosen')
-//         e.target.disabled = true;
-//         let results = checkLetter(e.target);
-//         if(results === false)
-//         {
-//             for(let i = 0; i <lis.length; i++) {
-//                 lis[i].pop;
-//                 missed =+ 1;
-//             }
-//         }
-//     } 
-// });
-
 qwerty.addEventListener('click', (event) => {
     let keyrow = qwerty.querySelectorAll('.keyrow');
     let button = qwerty.getElementsByTagName('button');
@@ -83,3 +67,28 @@ qwerty.addEventListener('click', (event) => {
     }
     
 });
+
+
+
+
+
+
+
+
+
+
+// qwerty.addEventListener('click' , (e) => {
+//     if (e.target.tagName == 'BUTTON')
+//     {
+//         e.target.classList.add('chosen')
+//         e.target.disabled = true;
+//         let results = checkLetter(e.target);
+//         if(results === false)
+//         {
+//             for(let i = 0; i <lis.length; i++) {
+//                 lis[i].pop;
+//                 missed =+ 1;
+//             }
+//         }
+//     } 
+// });
