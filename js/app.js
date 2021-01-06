@@ -55,7 +55,6 @@ function checkLetter(btn) {
 //     if (e.target.tagName == 'BUTTON')
 //     {
 //         e.target.classList.add('chosen')
-//         // document.querySelectorAll('.chosen').disabled = true;
 //         e.target.disabled = true;
 //         let results = checkLetter(e.target);
 //         if(results === false)
@@ -71,11 +70,16 @@ function checkLetter(btn) {
 qwerty.addEventListener('click', (event) => {
     let keyrow = qwerty.querySelectorAll('.keyrow');
     let button = qwerty.getElementsByTagName('button');
-    // const keyrow = button.parentNode;
     if ( event.target.tagName === 'BUTTON' && button.classList != 'chosen' ) {
         event.target.classList.add('chosen');
-        const letterFound = checkLetter(button);
         event.target.disabled = true;
+        const letterFound = checkLetter(event.target.textContent);
+        if (letterFound.value == null) {
+            // let scoreboard = document.getElementById('scoreboard');
+            let scoreboard = li.parentNode;
+            scoreboard.removeChild('li');
+            missed =+ 1;
+        }
     }
-
+    
 });
