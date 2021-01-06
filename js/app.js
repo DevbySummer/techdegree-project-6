@@ -72,10 +72,10 @@ qwerty.addEventListener('click', (event) => {
     let keyrow = qwerty.querySelectorAll('.keyrow');
     let button = qwerty.getElementsByTagName('button');
     // const keyrow = button.parentNode;
-    if ( event.target.tagname === 'BUTTON' && button.classList != 'chosen' ) {
-        button.event.target.classList.add('chosen');
+    if ( event.target.tagName === 'BUTTON' && button.classList != 'chosen' ) {
+        event.target.classList.add('chosen');
         const letterFound = checkLetter(button);
-        document.getElementById('button').disabled = true;
+        event.target.disabled = true;
     }
 
 });
