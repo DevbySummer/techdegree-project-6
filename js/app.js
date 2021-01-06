@@ -59,9 +59,9 @@ qwerty.addEventListener('click', (event) => {
         event.target.disabled = true;
         const letterFound = checkLetter(event.target.textContent);
         if (letterFound.value == null) {
-            // let scoreboard = document.getElementById('scoreboard');
-            let scoreboard = li.parentNode;
-            scoreboard.removeChild('li');
+            let ol = scoreboard.getElementsByTagName('ol')[0];
+            let ol = li.parentNode;
+            ol.removeChild('li');
             missed =+ 1;
         }
     }
