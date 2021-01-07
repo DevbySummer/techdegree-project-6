@@ -45,7 +45,8 @@ function checkLetter(btn) {
     for(let i = 0; i < lis.length; i++) {
         if(btn === lis[i].textContent) {
             lis[i].classList.add('show');
-            match = btn.textContent;
+            match = btn;
+            // match = btn.textContent; // this is the same as saying: match = event.target.textContent.textContent
         }
     }
     return match;
@@ -58,37 +59,20 @@ qwerty.addEventListener('click', (event) => {
         event.target.classList.add('chosen');
         event.target.disabled = true;
         const letterFound = checkLetter(event.target.textContent);
-        if (letterFound.value == null) {
-            let ol = scoreboard.getElementsByTagName('ol')[0];
-            ol = li.parentNode;
-            ol.removeChild('li');
+        if (letterFound == null) {
+            let ol = document.querySelectorAll('#scoreboard ol li img');
+            ol[missed].src = "images/lostHeart.png";
             missed =+ 1;
         }
     }
-    
+    function checkWin() {
+        if ( li.classList('show').length == li.classList('letter').length ) {
+            overlay.style.display = 'block';
+            document.classList.add('win');
+        }
+        if ( missed >= 5 ) {
+            document.classList.add('lose');
+        }
+    };
+    checkWin();
 });
-
-
-
-
-
-
-
-
-
-
-// qwerty.addEventListener('click' , (e) => {
-//     if (e.target.tagName == 'BUTTON')
-//     {
-//         e.target.classList.add('chosen')
-//         e.target.disabled = true;
-//         let results = checkLetter(e.target);
-//         if(results === false)
-//         {
-//             for(let i = 0; i <lis.length; i++) {
-//                 lis[i].pop;
-//                 missed =+ 1;
-//             }
-//         }
-//     } 
-// });
