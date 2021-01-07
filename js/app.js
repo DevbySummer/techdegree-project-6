@@ -60,7 +60,7 @@ qwerty.addEventListener('click', (event) => {
         const letterFound = checkLetter(event.target.textContent);
         if (letterFound.value == null) {
             let ol = scoreboard.getElementsByTagName('ol')[0];
-            let ol = li.parentNode;
+            ol = li.parentNode;
             ol.removeChild('li');
             missed =+ 1;
         }
