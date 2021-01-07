@@ -62,7 +62,7 @@ qwerty.addEventListener('click', (event) => {
         if (letterFound == null) {
             let ol = document.querySelectorAll('#scoreboard ol li img');
             ol[missed].src = "images/lostHeart.png";
-            missed =+ 1;
+            missed += 1;
         }
     }
     checkWin();
@@ -70,8 +70,8 @@ qwerty.addEventListener('click', (event) => {
 function checkWin() {
     let letter = document.querySelectorAll(".letter");
     let show = document.querySelectorAll(".show");
+    const overlay = document.getElementById('overlay');
     if ( show.length == letter.length ) {
-        const overlay = document.getElementById('overlay');
         overlay.style.display = 'block';
         document.classList.add('win');
     }
