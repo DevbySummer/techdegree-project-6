@@ -65,14 +65,17 @@ qwerty.addEventListener('click', (event) => {
             missed =+ 1;
         }
     }
-    function checkWin() {
-        if ( li.classList('show').length == li.classList('letter').length ) {
-            overlay.style.display = 'block';
-            document.classList.add('win');
-        }
-        if ( missed >= 5 ) {
-            document.classList.add('lose');
-        }
-    };
     checkWin();
 });
+function checkWin() {
+    let letter = document.querySelectorAll(".letter");
+    let show = document.querySelectorAll(".show");
+    if ( show.length == letter.length ) {
+        const overlay = document.getElementById('overlay');
+        overlay.style.display = 'block';
+        document.classList.add('win');
+    }
+    if ( missed >= 5 ) {
+        document.classList.add('lose');
+    }
+};
