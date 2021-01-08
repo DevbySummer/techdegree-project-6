@@ -68,14 +68,17 @@ qwerty.addEventListener('click', (event) => {
     checkWin();
 });
 function checkWin() {
-    let letter = document.querySelectorAll(".letter");
-    let show = document.querySelectorAll(".show");
-    const overlay = document.getElementById('overlay');
+    let letter = document.querySelectorAll(".letter"); // declare variable
+    let show = document.querySelectorAll(".show"); // declare variable
+    const overlay = document.getElementById('overlay'); // reuse variable
     if ( show.length == letter.length ) {
         overlay.style.display = 'block';
-        document.classList.add('win');
+        // overlay.className = 'win';
+        overlay.classList.add("win")
     }
     if ( missed >= 5 ) {
-        document.classList.add('lose');
+        overlay.style.display = 'block';
+        // overlay.className = 'lose';
+        overlay.classList.add('lose');
     }
 };
